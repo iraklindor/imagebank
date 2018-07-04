@@ -1,0 +1,43 @@
+{
+    "name": "iraklindor/imagebank",
+    "description": "Easily classify images",
+    "type": "craft-plugin",
+    "version": "1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "imagebank"
+    ],
+    "support": {
+        "docs": "https://github.com/iraklindor/imagebank/blob/master/README.md",
+        "issues": "https://github.com/iraklindor/imagebank/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Irakli Chalagashvili",
+            "homepage": "https://github.com/iraklindor/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "iraklindor\\imagebank\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "imagebank",
+        "handle": "imagebank",
+        "hasCpSettings": false,
+        "hasCpSection": true,
+        "changelogUrl": "https://raw.githubusercontent.com/iraklindor/imagebank/master/CHANGELOG.md",
+        "components": {
+            "imagebankService": "iraklindor\\imagebank\\services\\ImagebankService"
+        },
+        "class": "iraklindor\\imagebank\\Imagebank"
+    }
+}

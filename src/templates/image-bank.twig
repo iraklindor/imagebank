@@ -1,0 +1,46 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * imagebank plugin for Craft CMS 3.x
+ *
+ * imagebank index.twig
+ *
+ * @author    Irakli Chalagashvili
+ * @copyright Copyright (c) 2018 Irakli Chalagashvili
+ * @link      https://github.com/iraklindor/
+ * @package   Imagebank
+ * @since     1
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("iraklindor\\imagebank\\assetbundles\\imagebank\\ImagebankAsset") %}
+{% do view.registerAssetBundle("iraklindor\\imagebank\\assetbundles\\imagebankcpsection\\ImageBankCPSectionAsset") %}
+
+{# Link for the ? icon at the bottom of the page #}
+{% set docsUrl = "https://github.com/iraklindor/imagebank/blob/master/README.md" %}
+
+{# The title of this CP section #}
+{% set title = "imagebank" %}
+
+{# The URL to this plugin's base CP section #}
+{% set pluginCpUrl = url('imagebank') %}
+
+{# Get a URL to an image in our AssetBundle #}
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@iraklindor/imagebank/assetbundles/imagebankcpsection/dist', true) ~ '/img/ImageBank-icon.svg' %}
+
+{# Content that should appear in the page header#}
+{% set extraPageHeaderHtml %}
+    <div class="buttons">
+        <a href="{{ pluginCpUrl }}" class="btn submit add icon">{{ "Click Me!"|t('imagebank') }}</a>
+    </div>
+{% endset %}
+
+{# The content of the CP Section#}
+{% set content %}
+    <h2>{{ "ImageBank CP Section body goes here"|t('imagebank') }}</h2>
+    <img src="{{ iconUrl }}" height="64" width="64" />
+    <p class="textline"></p>
+{% endset %}
